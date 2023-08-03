@@ -35,7 +35,21 @@
                 ></a-image>
             </a-marker>
 
+            <div id="ar-interface" style="display: none;">
+                <!-- Add your interactive interface elements here -->
+                <button onclick="alert('Button clicked!')">Click Me</button>
+            </div>
+
             <a-entity camera></a-entity>
         </a-scene>
+
+        <script>
+            // Function to handle the AR object click event
+            document.querySelector('[click-events]').addEventListener('click', function () {
+                // Toggle the visibility of the AR interface when the AR object is clicked
+                const interface = document.getElementById('ar-interface');
+                interface.style.display = (interface.style.display === 'none') ? 'block' : 'none';
+            }
+        </script>
     </body>
 </html>
